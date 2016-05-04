@@ -9,6 +9,9 @@
   "bugs": {
     "url": "https://github.com/pkozlowski-opensource/ng2-play.ts/issues"
   },
+  "scripts": {
+    "postinstall": "typings install"
+  },
   "homepage": "https://github.com/pkozlowski-opensource/ng2-play.ts#readme",
   "devDependencies": {
     "connect": "^3.4.0",
