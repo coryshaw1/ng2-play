@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {provideForms, disableDeprecatedForms} from '@angular/forms';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {DATE_PICKER_PROVIDERS, DateRange, Collapse} from 'fuel-ui/fuel-ui';
 
@@ -64,4 +65,7 @@ export class HelloApp {
     }
 }
 
-bootstrap(HelloApp);
+bootstrap(HelloApp, [
+    provideForms(),
+    disableDeprecatedForms()
+]);
