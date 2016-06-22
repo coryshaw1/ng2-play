@@ -40,7 +40,7 @@ import {DATE_PICKER_PROVIDERS, DateRange, Collapse} from 'fuel-ui/fuel-ui';
                 padding: 0 25px;
             }
         </style>
-        <div id="collapse-demo-box" [collapse]="collapsed" [duration]="duration">
+        <div id="collapse-demo-box" @collapse="collapsed ? 'true' : 'false'">
             <h2>All of your content</h2>
             <ul>
                 <li>That you wish</li>
@@ -50,12 +50,12 @@ import {DATE_PICKER_PROVIDERS, DateRange, Collapse} from 'fuel-ui/fuel-ui';
             <p>At any time!</p>
         </div>
     `,
-    directives: [DATE_PICKER_PROVIDERS, Collapse]
+    directives: [DATE_PICKER_PROVIDERS],
+    animations: [Collapse(300)]
 })
 export class HelloApp {
     name: string = 'World';
     collapsed: boolean = false;
-    duration: number = 500;
     
     dateRangePickerValue: DateRange;
     
